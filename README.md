@@ -2,6 +2,8 @@
 ![](https://github.com/ambersun1234/closea/actions/workflows/lint.yaml/badge.svg)
 ![](https://img.shields.io/github/license/ambersun1234/closea)
 
+![](./src/assets/closea-black.jpg)
+
 Decentralized OpenSea-like NFT marketplace
 
 ## Introduction
