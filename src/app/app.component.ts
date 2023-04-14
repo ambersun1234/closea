@@ -1,10 +1,5 @@
 import { Router } from "@angular/router";
-import {
-    Component,
-    ElementRef,
-    OnInit,
-    ViewChild
-} from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 import { Network } from "src/shared/type";
 import { BlockchainNetworks, Networks } from "src/shared/share";
