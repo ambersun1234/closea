@@ -16,9 +16,5 @@ jobs:
       uses: actions/setup-node@v3
     - name: Install dependencies
       run: npm install
-    - name: Add prettier ignore
-      run: echo -e '*\n!.ts\n!.js\n!.html\n!.scss' > .prettierignore
     - name: Lint
-      uses: wearerequired/lint-action@v2.3.0
-      with:
-        prettier: true
+      run: npm run check
