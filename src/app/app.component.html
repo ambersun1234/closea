@@ -1,0 +1,65 @@
+<div class="header">
+    <mat-grid-list cols="12" rowHeight="1:0.8" gutterSize="10px">
+        <mat-grid-tile colspan="2" (click)="home()">
+            <img class="logo" src="../assets/closea-transparent.png" />
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="5">
+            <mat-form-field subscriptSizing="dynamic" style="width: 100%">
+                <mat-label>Search for contract address</mat-label>
+                <input class="logo" matInput />
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+            <mat-slide-toggle #themeSwitch>Theme</mat-slide-toggle>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2">
+            <mat-select [(ngModel)]="selected">
+                <mat-select-trigger>
+                    <div class="select-item">
+                        <ng-container
+                            *ngTemplateOutlet="
+                                networkSelect;
+                                context: { $implicit: networks[selected] }
+                            "
+                        ></ng-container>
+                    </div>
+                </mat-select-trigger>
+
+                <mat-option
+                    *ngFor="let network of networks"
+                    [value]="network.value"
+                >
+                    <div class="select-item">
+                        <ng-container
+                            *ngTemplateOutlet="
+                                networkSelect;
+                                context: { $implicit: network }
+                            "
+                        ></ng-container>
+                    </div>
+                </mat-option>
+            </mat-select>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2" *ngIf="!toggle">
+            <button mat-raised-button (click)="toggle = !toggle">
+                Connect Wallet
+            </button>
+        </mat-grid-tile>
+
+        <div *ngIf="toggle">
+            <mat-grid-tile colspan="2">Address</mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
+
+<ng-template #networkSelect let-network>
+    <img width="20px" height="20px" [src]="network.url" />
+    &nbsp;&nbsp;
+    {{ network.name }}
+</ng-template>
+
+<router-outlet></router-outlet>
