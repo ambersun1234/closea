@@ -9,6 +9,12 @@ Decentralized OpenSea-like NFT marketplace
 ## Introduction
 Closea - pronounced as "close sea", is a decentralized OpenSea-like NFT marketplace which allows user to buy or sell NFTs at
 
+## Git Hooks
+Install git hook by
+```shell
+$ make
+```
+
 ## Build
 ```shell
 $ npm i
