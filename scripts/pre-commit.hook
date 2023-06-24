@@ -9,5 +9,6 @@ npm run check
 if [ "$?" -eq 0 ]; then
 	echo -e "${GREEN}Prettier all passed${NC}"
 else
-	echo -e "${RED}Please format the file before commit${NC}"
+	echo -e "${RED}Please format the file before commit${NC}, run ${YELLOW}npm run pretty${NC}"
+	exit 1
 fi
